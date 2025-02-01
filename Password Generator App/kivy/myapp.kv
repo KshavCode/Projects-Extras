@@ -1,0 +1,19 @@
+screen: 
+<screen>:
+    MDTextField:
+        id: values
+        hint_text: "Enter Length of the password:"
+        helper_text: "Enter only numerical values."
+        max_text_length: 2
+        size_hint_x: .5
+        font_size: dp(25)
+        pos_hint: {'center_x': .5,'center_y': .5}
+        required : True
+        mode: "rectangle"
+    MDRaisedButton: 
+        text: "          Generate          "
+        font_size: "18dp"
+        width: "250dp"
+        on_release: root.gen(values.text)
+        pos_hint: {'center_x': .5,'center_y': .35}
+

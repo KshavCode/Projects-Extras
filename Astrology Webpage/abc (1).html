@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap" rel="stylesheet">
+    <title>Example</title>
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+            overflow-x: hidden;
+        }
+        #wall {
+            height: 35vw;
+            width: 100vw;
+            position:inherit;
+            justify-content: left;
+            align-items: center;
+        }
+        #a1 {
+            font-size: 1.7vw;
+            margin-left: 2vw;
+        }
+        h1, h5 {
+            position:absolute
+        }
+        #horo1 {
+            margin-left: 2vw;;
+            top: 5vw; 
+            color: white;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 0.2vw;
+            font-size: 7vw;
+        }
+        #horo2 {
+            margin-left: 2vw;;
+            top: 12vw; 
+            color: white;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 0.2vw;
+            font-size: 7vw;
+        }
+        h5 {
+            margin-left: 2.3vw;
+            top: 22.4vw;
+            color: white;
+            font-size: 1.5vw;
+            font-family: 'Comfortaa', cursive;
+            letter-spacing: 0.8vw;
+        }
+        @keyframes rotation {
+        to {
+            background-position-x: 110vw;
+            background-repeat: repeat;}    
+        }
+        .earth {
+            filter: brightness(74%);
+            width: 27vw;
+            height: 27vw;
+            position: absolute;
+            top: 5vw;
+            left: 56vw;
+            border-radius: 50%;
+            background: rgba(250, 0, 0, 0.591) url(https://c4.wallpaperflare.com/wallpaper/274/995/716/clean-world-map-wallpaper-preview.jpg) repeat;
+            animation-name: rotation;
+            animation-duration: 60s;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+
+        }
+        .earthgradient {
+            height: 27vw;
+            width: 27vw;
+            position: absolute;
+            top: 5vw;
+            left: 56vw;
+            opacity: 40%;
+        }
+        
+        @keyframes underlines {
+            0% {border-bottom-style: solid;}
+        }
+        h2 {
+            font-size: 4vw;
+            height: 6vw;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri;
+            letter-spacing: 0.2vw;
+            margin-left: 36vw;
+            display: inline-block;
+            position: relative;
+            color: crimson;
+            border-bottom: 0.5vw solid coral;
+        }
+        .zodiac {
+            width: 10vw;
+            cursor: pointer;
+            border: 1.4vw solid transparent;
+        }
+        @keyframes colorplay {
+            to {border-image: url(https://img.freepik.com/free-photo/low-angle-shot-mesmerizing-starry-sky_181624-27925.jpg?w=740&t=st=1688992471~exp=1688993071~hmac=ea9f0e10e78708186ebe9a6917e447056750a64b4e32de84bd88f088c1963783) 30 round;}
+        }
+        .zodiac:hover {
+            animation-name: colorplay;
+            animation-duration: 0.3s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        .a1 {
+            display: flex;
+            margin: 3vw;
+            justify-content: space-between;
+        }
+        .a2 {
+            display: flex;
+            margin: 3vw;
+            justify-content: space-between;
+        }
+        
+        #story1, #ti1 {
+            margin-left: 3vw;
+            width: 65vw;
+            height: 42.3vw;
+            float: left;
+            text-align: left;
+        }
+        #story1 {
+            margin-top: 0.1vw;
+            height: 4vw;
+        }
+        #ti2 {
+            width: 25vw;
+            margin-left: 2vw;
+            
+        }
+        #story2 {
+            margin-left: 70vw;
+            display: flex;
+            margin-top: 0.1vw;
+            width: 27vw;
+        }
+        
+        #ti3 {
+            width: 25vw;
+            margin-left: 2vw;
+            margin-top: 0.4vw;
+        }
+        #story3 {
+            margin-left: 70vw;
+            display: flex;
+            margin-top: 0.1vw;
+            width: 27vw;
+        }
+
+        #story1, #story2, #story3 {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1.8vw;
+        }
+        #story1 {
+            float: left;;
+        }
+        #story1:hover, #story2:hover, #story3:hover, #ti1:hover, #ti2:hover, #ti3:hover{
+            cursor: pointer;
+        }
+        #story1:hover, #story2:hover, #story3:hover {
+            text-decoration: underline;
+        }
+        .invite {
+            margin-top: 9vw;
+            background-color: bisque;
+            height: 40vw;
+            position: relative;
+            width: 100vw;
+        }
+        #bookimg {
+            margin: 3vw;
+            margin-left: 15vw;
+            width: 21vw;
+            position: absolute;
+        }
+        #booktitle {
+            margin-top: 2.3vw;
+            font-size: 3.5vw;
+            position: absolute;
+            display: block;
+            right: 20vw;
+            width: 32vw;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+        #bookauthor {
+            position: absolute;
+            font-family: 'Merriweather', serif;
+            font-size: 1.7vw;
+            display: inline;
+            right: 34.3vw;
+            top: 4.5vw;
+        }
+        .addv {
+            display: grid;
+            font-size: 2vw;
+            font-weight: 600;
+            position: absolute;
+            font-family: 'Merriweather', serif;
+            top: 12vw;
+            right: 26.1vw;
+            row-gap: 2vw;
+        }
+        .z1, .z2, .z3, .z4 {
+            border-bottom: 0.2vw solid rgb(159, 16, 255);
+        }
+        .button {
+            position: absolute;
+            top: 30.5vw;
+            right: 39.7vw;
+            font-size: 2vw;
+            border: 0.2vw solid rgb(122, 122, 255);
+            width: 12vw;
+            height: 3vw;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: rgb(122, 122, 255);
+            color: white;
+        }
+        .ending1 {
+            display: flex;
+            font-size: 1.8vw;
+            height: 6vw;
+            color: white;
+            background-color: rgb(4, 0, 15);
+            justify-content: space-evenly;
+            align-items: center;
+            font-family: 'Dosis', sans-serif;
+            width: 100vw;
+            margin-top: 1vw;
+        }
+        .ending2 {
+            background-color: rgb(4, 0, 15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+        }
+        .socialimg {
+            width: 3vw;
+            margin: 1.2vw;
+        }
+        .socialimg:hover {
+            filter: brightness(75%);
+            cursor: pointer;
+        }
+        .y1:hover {
+            filter: brightness(80%);
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="https://img.freepik.com/free-photo/low-angle-shot-mesmerizing-starry-sky_181624-27925.jpg?w=740&t=st=1688992471~exp=1688993071~hmac=ea9f0e10e78708186ebe9a6917e447056750a64b4e32de84bd88f088c1963783" alt="nothing" id="wall">
+        <h1 id="horo1">Know your</h1>
+        <h1 id="horo2">Horoscope</h1>
+        <h5>with Pluto astronomy</p>
+    </div>
+    <div class="earth"></div>
+    <img src="gola.png" class="earthgradient">
+    <div class="content">
+        <h2>Astrology Today</h2>
+        <div class="a1">
+            <img src="https://pngimg.com/uploads/sagittarius/sagittarius_PNG42.png" class="zodiac" id="img1" title="Sagittarius"></img>
+            <img src="https://pngimg.com/uploads/capricorn/capricorn_PNG94.png" class="zodiac" id="img4" title="Capricorn"></img>
+            <img src="https://pngimg.com/uploads/gemini/gemini_PNG17.png" class="zodiac" id="img2" title="Gemini"></img>
+            <img src="https://png2.cleanpng.com/sh/f93c2f817117cfc14716724142328fbb/L0KzQYm3VMAzN5duiZH0aYP2gLBuTfxqaqNmRdN8dILyfLFumb10gZ5nh942enBnebLqTfhwepD4e9H5ZT3zecTqhgMuPZJoSdVsZULoRLLrgcYvPWE8TaQ6OEG0RYO5VsUxO2Q9UaUBNz7zfri=/kisspng-libra-astrology-symbol-zodiac-horoscope-pisces-5ac1cce2e4ada6.5075218115226503389367.png" class="zodiac" id="img3" title="Libra"></img>
+            <img src="https://pngimg.com/d/cancer_zodiac_PNG6.png" class="zodiac" id="img5" title="Cancer"></img>
+            <img src="https://pngimg.com/uploads/taurus/taurus_PNG42.png" class="zodiac" id="img6" title="Taurus"></img>
+        </div>
+        <div class="a2">
+            <img src="https://pngimg.com/uploads/aries/aries_PNG46.png" class="zodiac" id="img7" title="Aries"></img>
+            <img src="https://pngimg.com/uploads/aquarius/aquarius_PNG5.png" class="zodiac" id="img8" title="Aquarius"></img>
+            <img src="https://pngimg.com/uploads/scorpio/scorpio_PNG8.png" class="zodiac" id="img9" title="Scorpio"></img>
+            <img src="https://pngimg.com/uploads/virgo/virgo_PNG20.png" class="zodiac" id="img10" title="Virgo"></img>
+            <img src="https://pngimg.com/uploads/pisces/pisces_PNG3.png" class="zodiac" id="img11" title="Pisces"></img>
+            <img src="https://pngimg.com/uploads/leo/leo_PNG1.png" class="zodiac" id="img12" title="Leo"></img>
+        </div>
+    </div>
+    <div class="stories">
+        <h2>Top Stories</h2>
+        <div class="images">
+            <img src="https://cdn.wccftech.com/wp-content/uploads/2016/09/spacee.jpg" alt="img1" id="ti1">
+            <p id="story1">The top astrologers have found amazing features in various zodiac signs. Know what they have found.</p>
+            <img src="https://images.hindustantimes.com/img/2022/03/19/1600x900/Sagittariu_1647717726799_1647717773433.jpg" alt="img1" id="ti2">
+            <p id="story2">Is August the unluckiest month for Sagittarius? See what Astrologers have to say</p>
+            <img src="https://d2al04l58v9bun.cloudfront.net/blog/wp-content/uploads/2022/12/02162430/The-Best-Zodiac-Signs.jpg" alt="img1" id="ti3">
+            <p id="story3">"Libra is going at the top of the world this year." says Dr. John Williams</p>
+        </div>
+    </div>
+    <div class="invite">
+        <img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1553618548-51SGru8o56L.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="book" id="bookimg">
+        <p id="booktitle">The Twelve Houses</p>
+        <p id="bookauthor">By Howard Sasportas</p>
+        <div class="addv">
+            <div class="z1">Predictions till 2025</div>
+            <div class="z2">Secrets of every zodiac</div>
+            <div class="z3">Mantra to control bad luck</div>
+            <div class="z4">Secrets about your sign</div>
+        </div>
+        <div class="button">
+            Buy Now!
+        </div>
+    </div>
+    <div class="ending1">
+        <div class="y1">ABOUT US</div>
+        <div class="y1">INFORMATION</div>
+        <div class="y1">CONTACT US</div>
+        <div class="y1">PRIVACY</div>
+        <div class="y1">TERMS</div>
+        <div class="y1">ADVERTISING</div>
+    </div>
+    <div class="ending2">
+        <img src="https://cdn1.iconfinder.com/data/icons/social-circle-3/32/instagram_circle-256.png" alt="" class="socialimg" id="">
+        <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/83-facebook-256.png" alt="" class="socialimg" id="">
+        <img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Youtube_colored_svg-512.png" alt="" class="socialimg" id="">
+        <img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter3_colored_svg-256.png" alt="" class="socialimg" id="">
+        <img src="https://cdn0.iconfinder.com/data/icons/logos-brands-7/512/TikTok_logo_app0-256.png" alt="" class="socialimg" id="">
+    </div>
+</body>
+</html>
