@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>ARSD</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+        }
+        body {
+            background-color: #EFE3C2;
+        }
+        .heading1 {
+            background-color: #85A947;
+            height: 7vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #name {
+            font-size: 4.5vw;
+            font-family: "Bebas Neue", serif;
+            letter-spacing: .2vw;
+            color: #123524;
+            text-decoration: underline;
+            text-underline-offset: 1vw;
+        }
+        #logoimg1 {
+            height: 6.5vw;
+            float: right;
+        }
+        #logoimg2 {
+            height: 6.5vw;
+            float: left;
+        }
+        .imgbox1 {
+            position: absolute;
+            width: 78.8vw;
+            left: 10vw;
+        }
+        #divider {
+            margin-left: 30vw;
+            margin-right: 30vw;
+            font-size: 1.8vw;
+            margin-top: 1vw;
+            border-top: .4vw ridge #3E7B27;
+        }
+        #title {
+            font-size: 3vw;
+            font-family:'Franklin Gothic Medium';
+            letter-spacing: .2vw;
+            word-spacing: 1vw;
+            text-align: center;
+            margin-top: 5vw;
+            color: #3E7B27;
+        }
+        .box {
+            margin-top: 1vw;
+            display: flex;
+            font-family: "Kanit", serif;
+            color: #3E7B27;
+        }
+        .dropdown {
+            height: 2vw;
+            margin-left: 1vw;
+            padding-left: .5vw;
+            font-size: 1.3vw;
+            width: 20vw;
+            border: .2vw solid #85A947;
+            text-align: center;
+        }
+        .inputs {
+            height: 1.7vw;
+            margin-left: 1vw;
+            padding-left: .5vw;
+            font-size: 1.3vw;
+            width: 19.3vw;
+            border: .2vw solid #85A947;
+            text-align: center;
+        }
+        #button1 {
+            width: 40vw;
+            height: 3vw;
+            margin-top: 3vw;
+            font-size: 1.8vw;
+            font-family: 'Franklin Gothic Medium';
+            color: #bdf361;
+            background-color: #608154;
+            border: .2vw dashed;
+        }
+        #button1:hover {
+            filter: brightness(.8);
+            cursor: pointer;
+        }
+        .end {
+            background-color: #123524;
+            height: 13vw;
+            margin-top: 10vw;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: 3vw 3vw 3vw;
+        }
+        .links {
+            text-decoration: None;
+            color: #85A947;
+            font-size: 1.5vw;
+            font-family: "Kanit", serif;
+            margin-top: .3vw;
+            margin-left: 2vw;
+        }
+        .links:hover {
+            color: #bdf361;
+        }
+        .social {
+            height: 6.5vw;
+            background-color: #123524;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .socialimg {
+            width: 5vw;
+            margin-top: .5vw;
+            margin-left: 5vw;
+            filter:brightness(.6);
+        }
+        .socialimg:hover {
+            filter: brightness(1);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="heading1">
+        <div class="imgbox1">
+            <img src="images/logo.png" alt="collegeLogo" id="logoimg1">
+            <img src="images/logo.png" alt="collegeLogo" id="logoimg2">
+        </div>
+        <p id="name">ATMA RAM SANATAN DHARMA COLLEGE</p>
+    </div>
+    <div class="main">
+        <div id="title">Student Login</div>
+    </div>
+    <div id="divider">
+        <div class="box" style="margin-top: 2vw">
+            <div>Type Of Roll Number</div>
+            <div>
+                <select name="pets" class="dropdown">
+                    <option value="default">College RollNo.</option>
+                    <option value="exam">Examination RollNo.</option>
+                  </select>
+            </div>
+        </div>
+        <div class="box">
+            <div>Roll Number</div>
+            <div>
+                <input type="text" class="inputs">
+            </div>
+        </div>
+        <div class="box">
+            <div>Full Name</div>
+            <div>
+                <input type="text" class="inputs">
+            </div>
+        </div>
+        <div class="box">
+            <div>Date Of Birth</div>
+            <div>
+                <input type="date" class="inputs" max="today" min="2000-01-01">
+            </div>
+        </div>
+        <button id="button1">SUBMIT</button>
+    </div>
+    <div class="end">
+        <p><a href="" class="links">Student Login</a></p>
+        <p><a href="" class="links">Admin Login</a></p>
+        <p><a href="" class="links">Employee Login</a></p>
+        <p><a href="" class="links">Forms</a></p>
+        <p><a href="" class="links">Internship Schemes</a></p>
+        <p><a href="" class="links">Student Union</a></p>
+        <p><a href="" class="links">Feedback</a></p>
+        <p><a href="" class="links">Online Fee Payment</a></p>
+        <p><a href="" class="links">Mentor Details</a></p>
+        <p><a href="" class="links">Monthly Attendance</a></p>
+        <p><a href="" class="links">Short Attendance Students</a></p>
+        <p><a href="" class="links">List Of Students (Course Wise)</a></p>
+    </div>
+    <div class="social">
+        <a href="https://www.facebook.com/ARSDCOLLEGE.DU/" target="_blank"><img src="images/facebook.png" alt="facebook" class="socialimg" style="margin-left: 0;"></a>
+        <a href="https://www.instagram.com/_arsdcollege_/" target="_blank"><img src="images/instagram.png" alt="instagram" class="socialimg"><a href=""></a></a>
+        <a href="https://x.com/arsdcollegedu?mx=2" target="_blank"><img src="images/twitter.png" alt="x.com" class="socialimg"><a href=""></a></a>
+        <a href="https://www.youtube.com/channel/UCk6p1HKaWXxEe2OOU8Nk4qg" target="_blank"><img src="images/youtube.png" alt="youtube" class="socialimg"><a href=""></a></a>
+    </div>
+</body>
+</html>
