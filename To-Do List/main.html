@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <style>
+        body {
+            background-color: rgb(22, 22, 22);
+        }
+        * {
+            margin:0;
+            padding:0;
+        }
+        #buttonAdd {
+            background-color: rgb(192, 44, 44);
+            font-size: 2.5vw;
+            color: white;
+            border: .2vw solid white;
+            border-radius: 2vw;
+            width: 15vw;
+            margin-bottom: 5vw;
+            margin-top: 2vw;
+            margin-left: 1vw;
+            font-family: verdana;
+
+        }
+        #buttonAdd:hover {
+            cursor: pointer;
+            filter: brightness(.85)
+        }
+        #titleTask {
+            font-size: 3.5vw;
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+            font-family: 'Franklin Gothic Medium';
+            letter-spacing: .5vw;
+            margin-left: 30vw;
+            margin-right: 31vw;
+            margin-bottom: 5vw;
+        }
+        #block {
+            font-size: 1.8vw;
+            color: rgb(250, 173, 173);
+            font-family: verdana;
+            margin-left: 1vw;
+            margin-bottom: 1vw;
+        }
+
+        #deleteButton {
+            background-color: rgb(3, 148, 27);
+            font-size: 1.5vw;
+            width: 10vw;
+            border: .1vw dashed white;
+            color: white;
+            margin-top: 2vw;
+            font-family: verdana;
+        }
+        .buttons {
+            font-size: 2vw;
+            background-color: rgb(94, 22, 28);
+        }
+        .buttons:hover {
+            filter: grayscale(.5);
+            cursor: pointer;
+        }
+
+        @media screen and (max-width:768px) {
+            #buttonAdd {
+            font-size: 5vw;
+            width: 30vw;
+            margin-bottom: 5vw;
+            margin-top: 2vw;
+            margin-left: 1vw;
+            }
+            #titleTask {
+                font-size: 8vw;
+                letter-spacing: .5vw;
+                margin-left: 20vw;
+                margin-right: 21vw;
+                margin-bottom: 5vw;
+            }
+            #block {
+                font-size: 3.5vw;
+                margin-left: 1vw;
+                margin-bottom: 1vw;
+            }
+
+            #deleteButton {
+                font-size: 1.5vw;
+                width: 10vw;
+                margin-top: 2vw;
+            }
+            .buttons {
+                font-size: 4vw;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <button id="buttonAdd" class="buttons">Add +</button>
+    <h2 id="titleTask">Tasks</h2>
+    <div class="tasks">
+    </div>
+
+    <script>
+        let addButton = document.getElementById("buttonAdd")
+        let tasksBox = document.getElementsByClassName("tasks")
+        let taskList = []
+        let count = 0
+        addButton.addEventListener("click", ()=>{
+            taskName = prompt("Enter task: ")
+            if (taskName.trim() === "") {
+                alert("Kindly specify your task correctly!")
+            }
+            else {
+                let newElement = document.createElement("div")
+                newElement.innerHTML = `<span>${taskName}</span> <span id="tick${count}"  class="tickButtons buttons" onClick="completeTask(this.id)">✅</span> <span id="tick${count}" class="cancelButtons buttons" onClick="deleteTask(this.id)">❌</span>`
+                newElement.id = "block"
+                tasksBox[0].append(newElement)
+                count++
+            }
+        })
+
+        const deleteTask = (id) => {
+            let task = document.getElementById(id)
+            task.parentElement.remove()
+        }
+        const completeTask = (id) => {
+            let task = document.getElementById(id).previousSibling.previousSibling
+            if (task.style.textDecoration != "line-through") {
+                task.style.textDecoration = "line-through"
+                task.style.filter = "brightness(.7)"
+            }
+            else {
+                task.style.textDecoration = "none"
+                task.style.filter = "brightness(1)"
+            }
+        }
+
+    </script>
+</body>
+</html>
