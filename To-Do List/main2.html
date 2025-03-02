@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>To Do List</title>
+        <style>
+            @keyframes insertAnimation {
+                0% {
+                    margin-left: 2vw;
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                    margin-left: 5vw;
+                }
+            }
+            @keyframes borderIn {
+                100% {
+                    border-left: 1vw solid var(--primaryColor);
+                }
+            }
+            :root {
+            --darkPrimaryColor: #443627;
+            --primaryColor: #D98324;
+            --secondaryColor: #EFDCAB;
+            --tertiaryColor: #F2F6D0;
+        }
+        ::placeholder {
+            color: var(--primaryColor);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: var(--darkPrimaryColor);
+        }
+        .heading {
+            font-size: 6vw;
+            margin-top: 4vw;
+            text-align: center;
+            color: var(--secondaryColor);
+            font-family: 'Franklin Gothic Medium', sans-serif;
+            letter-spacing: .5vw;
+        }
+        .field {
+            margin-top: 3vw;
+            text-align: center;
+        }
+        #textInput {
+            width: 45vw;
+            padding-left: 1vw;
+            height: 3vw;
+            border-radius: 3vw;
+            background-color: var(--darkPrimaryColor);
+            border: .2vw solid var(--primaryColor);
+            color: var(--primaryColor);
+            font-size: 1.8vw;
+            padding-right: 1.5vw
+        }
+        #addButton {
+            width: 10vw;
+            background-color: var(--primaryColor);
+            border: None;
+            border-radius: 2vw;
+            font-size: 2vw;
+            height: 3.5vw;
+            color: var(--darkPrimaryColor);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+        }
+        #addButton:hover {
+            opacity: .7;
+            cursor: pointer;
+        }
+        #textInput:focus {
+            outline: None;
+            animation-name: borderIn;
+            animation-duration: .3s;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+        }
+        .block {
+            margin-top: .5vw;
+            background-color: #443627;
+            filter: brightness(1.3);
+            color: var(--primaryColor);
+            font-family: Arial, sans-serif;
+            margin-right: 10vw;
+            font-size: 1.7vw;
+            padding: 1.3vw;
+            padding-right: 2vw;
+            text-align: justify;
+            cursor: default;
+            word-break: break-all;
+        }
+        .buttonImg {
+            width: 3vw;
+            position: relative;
+            filter: none;
+            margin-top: 1vw;
+        }
+        .buttonImg:hover {
+            cursor: pointer;
+            background-color: var(--darkPrimaryColor);
+        }
+        #taskList {
+            margin-top: 5vw;
+        }
+        @media screen and (max-width:768px) {
+            .heading {
+            font-size: 10vw;
+            margin-top: 7vw;
+            }
+            .field {
+                margin-top: 3vw;
+                text-align: center;
+            }
+            #textInput {
+                width: 75vw;
+                padding-left: 2vw;
+                padding-right: 4vw;
+                height: 8vw;
+                border-radius: 5vw;
+                border: .3vw dashed;
+                font-size: 4vw;
+            }
+            #addButton {
+                margin-top: 3vw;
+                width: 90vw;
+                border-radius: 5vw;
+                font-size: 5vw;
+                height: 6vw;
+            }
+            .block {
+                margin-top: 2vw;
+                font-size: 4vw;
+                padding-left: 3vw;
+                padding-right: 4vw;
+                text-wrap: pretty;
+            }
+            .buttonImg {
+                width: 6vw;
+                margin-top: 3vw;
+            }
+            #taskList {
+                margin-top: 10vw;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="heading">TODO APP</div>
+    <div class="field">
+        <input type="text" id="textInput" placeholder="Type your task here..."> <button id="addButton">Add +</button>
+    </div>
+    <div id="taskList">
+    </div>
+
+    <script>
+        let addButton = document.getElementById("addButton")
+        let taskCount = 0
+        addButton.addEventListener("click", ()=>{
+            let taskDes = document.getElementById("textInput")
+            if (taskDes.value.trim() === "") {
+                alert("Task Cannot be Empty!")
+                taskDes.value = ""
+                return
+            }
+            let newTask = document.createElement("div")
+            newTask.className = "block"
+            newTask.style.animationName = "insertAnimation"
+            newTask.style.animationFillMode = "forwards"
+            newTask.style.animationDuration = ".2s"
+            newTask.style.animationTimingFunction = "linear"
+            newTask.innerHTML = `
+            <p id="task${taskCount}">${taskDes.value}</p>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#ff4242" class="buttonImg" onClick=deleteTask(this)><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#2ac71f" class="buttonImg" onClick=completeTask(this)><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>`
+            document.getElementById("taskList").append(newTask)
+            taskCount++
+            taskDes.value = ""
+        })
+
+        const deleteTask = (element) => {
+            element.parentElement.remove()
+        }
+        const completeTask = (element) => {
+            let taskText = element.previousSibling.previousSibling.previousSibling.previousSibling
+            taskText.style.textDecoration = "line-through"
+            taskText.style.opacity = ".5"
+        }
+
+    </script>
+</body>
+</html>
