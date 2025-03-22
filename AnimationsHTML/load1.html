@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: rgb(13, 33, 40);
+        }
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #content {
+            height: 25vw;
+            width: 25vw;
+            background-color: rgb(13, 33, 40);
+            filter: brightness(1.5);
+            border-radius: 10%;
+            box-shadow: .2vw .2vw 3vw ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        @keyframes rotation {
+            0% {
+                transform: rotate(0deg);
+                filter: hue-rotate(0deg);}
+            100% {
+                transform: rotate(360deg);
+                filter: hue-rotate(360deg)}
+        }
+        .orbit {
+            border: .2vw solid rgb(45, 45, 45);
+            border-radius: 50%;
+            position: absolute;
+            animation-name: rotation;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        #orbit1 {
+            height: 22vw;
+            width: 22vw;
+            animation-duration: 1s;
+        }
+        #orbit2 {
+            height: 15vw;
+            width: 15vw;
+            animation-duration: 1s;
+            animation-direction: reverse;
+        }
+        #orbit3 {
+            height: 8vw;
+            width: 8vw;
+            animation-duration: 1s;
+        }
+        #orbit1::before {
+            content: "";
+            background-color: rgb(255, 0, 0);
+            position: absolute;
+            width: 2vw;
+            height: 2vw;
+            transform: translateX(5vw);
+            border-radius: 50%;
+            box-shadow: 0vw 0vw 5vw red;
+        }
+        #orbit2::before {
+            content: "";
+            background-color: fuchsia;
+            position: absolute;
+            width: 2vw;
+            height: 2vw;
+            transform: translateX(10vw);
+            border-radius: 50%;
+            box-shadow: 0vw 0vw 3vw fuchsia;
+        }
+        #orbit3::before {
+            content: "";
+            background-color: palevioletred;
+            position: absolute;
+            width: 2vw;
+            height: 2vw;
+            transform: translateX(.5vw);
+            border-radius: 50%;
+            box-shadow: 0vw 0vw 3vw palevioletred;
+        }
+
+    </style>
+</head>
+<body>
+    <p style="color: white;font-family: 'Gill Sans', 'Gill Sans MT';font-size: 8vw;text-align: center;margin-bottom: -13vw;margin-top: 5vw;">Loading Screen</p>
+    <div class="main">
+        <div id="content">
+            <div class="orbit" id="orbit1"></div>
+            <div class="orbit" id="orbit2"></div>
+            <div class="orbit" id="orbit3"></div>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: rgb(13, 33, 40);
+        }
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .text {
+            color: white;
+            font-size: 4vw;
+            font-family: 'Segoe UI';
+            animation-name: jump;
+            animation-duration: .6s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes jump {
+            0% {transform: translateY(0vw);opacity: .5;color: white;}
+            50% {transform: translateY(3vw);opacity: 1; color: red;box-shadow: 0 0 .1vw; font-weight: bold;}
+        }
+
+    </style>
+</head>
+<body>
+    <p style="color: white;font-family: 'Gill Sans', 'Gill Sans MT';font-size: 8vw;text-align: center;margin-bottom: -13vw;margin-top: 5vw;">Loading Screen</p>
+    <div class="main">
+        <div style="display: flex;" id="block">
+            <div class="text">L</div>
+            <div class="text">O</div>
+            <div class="text">A</div>
+            <div class="text">D</div>
+            <div class="text">I</div>
+            <div class="text">N</div>
+            <div class="text">G</div>
+        </div>
+    </div>
+    <script>
+        let words = document.getElementById("block").children
+        let delay = .06
+        for (let i=0;i<words.length;i++) {
+            words[i].style.animationDelay = delay.toString()+"s"
+            delay += .06
+            console.log(delay)
+        }
+    </script>
+</body>
+</html>

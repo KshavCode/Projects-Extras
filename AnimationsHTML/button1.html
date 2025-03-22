@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button</title>
+    <style>
+        #but1 {
+            margin-top: 5vw;
+            font-size: 3vw;
+            width: 20vw;
+            background: linear-gradient(to right, #40c9ff, #e81cff);
+            transition: 100ms;
+            position: relative;
+            z-index: 0;
+            color: white;
+            font-family: 'Trebuchet MS', sans-serif;
+        }
+        #but1:hover {
+            cursor: pointer;
+            color: black;
+            border-color:crimson;
+        }
+        #but1::after {
+            content: "";
+            width: 0px;
+            height: 100%;
+            background: linear-gradient(to right, #ff930f, #fff95b);
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: 300ms ease-in-out;
+            z-index: -1;
+        }
+        #but1:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: center;">
+        <button id="but1">Click Here</button>
+    </div>
+</body>
+</html>
