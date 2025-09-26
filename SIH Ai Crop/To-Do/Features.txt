@@ -1,0 +1,41 @@
+1. Not just crop recommendation -> suggests 3-5 year rotation plan to maintain soil fertility & prevent pest cycles.
+
+1.2 Climate-Resilient Crop Prediction : Uses climate change models (rainfall variability, temperature trends) to suggest crops that will remain viable for the next 5-10 years.
+1.3 Market Demand Forecasting : Integrates mandi + export data to recommend crops with future price growth → ensuring farmers don’t just grow, but grow profitably.
+1.4 Pest & Disease Risk Alerts : Predicts pest outbreak likelihood (based on season + crop + region) and suggests resistant crop varieties.
+1.5 AI-Powered Crop Selection -> ML model integrates soil, water availability, historical yields, weather, and market data.
+Risk & Sustainability Index -> For each crop, system scores:
+Profitability (market price trends + input cost)
+Water footprint & soil health impact
+Climate resilience & pest vulnerability
+Model Reliability -> Uses XGBoost to increase accuracy on user feedback and past incorrect predictions, thus increasing the reliability overall.
+Image Detection -> Another model, which mainly focuses on scanning crop diseases and warn the farmer.
+Offline First Approach -> Farmers manually enter soil/water/crop details offline; system works without internet and syncs when connected.
+Farmer-Friendly Interface -> Intuitive design with icons, infographics, and regional languages.
+Innovation -> Unlike static apps, our platform is dynamic, adaptive, and sustainability-driven, making agriculture future-proof.
+
+2. SIMPLE UI
+
+2.1 No Hassle with Login Or Registeration, start right away!
+2.2 Selected Region once selected, is saved and can be retrieved whenever the app is opened again.
+2.3 Saves most of the information in a compressed format, so that app launch is fast.
+2.4 Get all information about the region's trending crops, temperature, rainfall, sunlight intensity and market predictions for your current crop at one place in a form of a dashboard!
+2.5 Retrieve various kinds of manuals at one place!
+2.6 Two tabs with 6+ functionalities.
+
+3. OFFLINE MODE 
+
+3.1 Downloads graphs, region info and other information in a compressed format to use it for areas with no internet.
+3.2 When no connectivity, the farmer can manually enter details for crop recommendation.
+3.3 System works without internet and syncs when connected.
+
+4. MULTILINGUAL SUPPORT AND VOICE SUPPORT
+
+4.1 Uses Bhashini API, which has various models to support translation of 22+ official languages!
+4.2 For voice translation, the same API is used, making it easier to keep the application less dependent on too many resources.
+4.3 Promotes Made In India by using most of data from the Government and Indian APIs.
+
+
+
+
+

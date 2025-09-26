@@ -1,0 +1,12 @@
+FOR WEATHER: 
+https://openweathermap.org/api
+https://www.weatherapi.com/
+https://climateknowledgeportal.worldbank.org/download-data	
+
+FOR SOIL
+https://soilgrids.org/
+https://data.apps.fao.org/
+https://data.gov.in/catalogs
+
+FOR PRICES 
+https://agmarknet.gov.in/
